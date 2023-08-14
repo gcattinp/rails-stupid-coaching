@@ -1,0 +1,26 @@
+<h1 class="display-3">Stupid Coaching</h1>
+  <div class="question">
+    <blockquote class="blockquote">
+      <p class="mb-0"><%= params[:answer] %></p>
+      <br>
+      <footer class="blockquote-footer">You</footer>
+    </blockquote>
+  </div>
+  <br>
+  <div class="answer">
+    <blockquote class="blockquote">
+      <p class="mb-0">
+        <% if params[:answer] == "I am going to work" %>
+        <%= "Great!" %>
+        <% elsif params[:answer].last == "?" %>
+        <%= "Silly question, get dressed and go to work!" %>
+        <% else %>
+        <%= "I don't care, get dressed and go to work!" %>
+        <% end %>
+      </p>
+      <br>
+      <footer class="blockquote-footer">Coach</footer>
+    </blockquote>
+  </div>
+
+<%= link_to "Ask a new question", ask_path %>
